@@ -1,0 +1,58 @@
+body {
+  max-width: 630px;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  display: block;
+  border: 3px solid rgba(0, 0, 0, 0.145);
+  border-radius: 10px;
+  margin: auto;
+
+  background-image: url(https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810174.jpg?w=2000);
+}
+.card {
+  margin: auto;
+  display: block;
+  background-color: rgba(214, 197, 174, 0.329);
+}
+img {
+  width: 25%;
+  margin: auto;
+  display: block;
+}
+
+h4,
+h5,
+h6,
+p,
+ul {
+  text-align: center;
+  margin-bottom: 4px;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: inline;
+}
+hr {
+  margin: 4px;
+}
+#farenheit {
+  text-decoration: none;
+}
+#celsius {
+  text-decoration: none;
+}
+
+.container .row {
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+.btn {
+  background-color: #756874;
+  border-color: #756874;
+}
+#status {
+  text-transform: capitalize;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="card" style="width: 100%">
+      <div class="card-body">
+        <h5 class="card-title">WEATHER APP</h5>
+        <div class="container">
+          <form id="city-search-form">
+            <div class="row">
+              <div class="col-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputCity"
+                  autofocus="on"
+                  autocomplete="off"
+                  placeholder="Enter a city"
+                />
+              </div>
+              <div class="col-2">
+                <button type="submit" class="btn btn-primary">Search</button>
+              </div>
+              <div class="col-2" id="current-button">
+                <button type="submit" class="btn btn-primary">Current</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <h5 id="city-name">Eldoret, Kenya</h5>
+        <h5 id="day-date">Friday, 8 Jan 2023</h5>
+        <h5 id="icon-1">
+          <img src="images/suncloud.png" alt="Weather icon" width="120" />
+        </h5>
+        <h4>
+          <span id="temperature">17°</span><a href="#" id="celsius">C</a>|<a
+            href="#"
+            id="farenheit"
+            >F</a
+          >
+        </h4>
+        <h6 id="status">Clear with periodic clouds</h6>
+        <ul>
+          <li>High:23°</li>
+          <li>Low:11°</li>
+        </ul>
+        <hr style="border: 2px dashed #433f42" />
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-3">
+              Wind
+              <div class="row" id="wind-speed">16km/h</div>
+            </div>
+            <div class="col-3">
+              Humidity
+              <div class="row" id="humidity">50%</div>
+            </div>
+            <div class="col-3">
+              Precipitation
+              <div class="row" id="precip">0%</div>
+            </div>
+          </div>
+        </div>
+        <hr style="border: 2px solid #433f42" />
+        <h6>Next 5-day forecast</h6>
+        <div class="row forecast">
+          <div class="col">
+            <h6>Sat</h6>
+            <img src="images/sun.png" alt="weather icon" width="100" />
+            <p class="temp">24°/12°</p>
+          </div>
+          <div class="col">
+            <h6>Sun</h6>
+            <img src="images/sun.png" alt="weather icon" width="100" />
+            <p class="temp">24°/12°</p>
+          </div>
+          <div class="col">
+            <h6>Mon</h6>
+            <img src="images/sun.png" alt="weather icon" width="100" />
+            <p class="temp">24°/12°</p>
+          </div>
+          <div class="col">
+            <h6>Tue</h6>
+            <img src="images/suncloud.png" alt="weather icon" width="100" />
+            <p class="temp">24°/12°</p>
+          </div>
+          <div class="col">
+            <h6>Wed</h6>
+            <img src="images/sun.png" alt="weather icon" width="100" />
+            <p class="temp">24°/12°</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
