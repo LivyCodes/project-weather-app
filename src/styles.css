@@ -1,18 +1,24 @@
 body {
-  max-width: 630px;
-  flex-direction: column;
-  backdrop-filter: blur(10px);
-  display: block;
-  border: 3px solid rgba(0, 0, 0, 0.145);
-  border-radius: 10px;
+  max-width: 600px;
   margin: auto;
-
-  background-image: url(https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810174.jpg?w=2000);
+  background-image: url(https://wallpaperaccess.com/full/5502887.png);
+  background-size: cover;
 }
 .card {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 50px;
+  max-width: 630px;
+  backdrop-filter: blur(8px);
+  border: 3px solid rgba(0, 0, 0, 0.145);
+  border-radius: 10px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: auto;
-  display: block;
-  background-color: rgba(214, 197, 174, 0.329);
+  background-color: #f5f5f55a;
 }
 img {
   width: 25%;
@@ -50,9 +56,15 @@ hr {
   width: 100%;
 }
 .btn {
-  background-color: #756874;
-  border-color: #756874;
+  background-color: #343a51;
+  border-color: #343a51;
 }
 #status {
   text-transform: capitalize;
+}
+footer p {
+  text-align: left;
+  font-weight: 600;
+  font-family: "Courier Prime", monospace;
+  color: #f5f5f5;
 }
