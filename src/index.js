@@ -53,11 +53,18 @@ function showTemperature(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let humidity = response.data.main.humidity;
   let icon = response.data.weather[0].icon;
+  let highTemp = Math.round(response.data.main.temp_max);
+  let lowTemp = Math.round(response.data.main.temp_min);
 
   let newTimes = document.querySelector("#day-date");
-  newTimes.innerHTML = showDate(response.data.dt * 1000);
+  updateTime = showDate(response.data.dt * 1000);
+  newTimes.innerHTML = `Last updated on ${updateTime}`;
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = `${response.data.name}`;
+  let varTempHigh = document.querySelector("#var-high-temp");
+  varTempHigh.innerHTML = `High: ${highTemp}`;
+  let varTempLow = document.querySelector("#var-low-temp");
+  varTempLow.innerHTML = `Low: ${lowTemp}`;
   let temp = document.querySelector("#temperature");
   temp.innerHTML = `${celsiusTemperature}°`;
   let stat = document.querySelector("#status");
@@ -97,7 +104,7 @@ function currentCity() {
 }
 
 function showFarenheitTemp(event) {
-  event.preventDefault();
+  //event.preventDefault();
   let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let temperat = document.querySelector("#temperature");
   temperat.innerHTML = Math.round(farenheitTemperature);
