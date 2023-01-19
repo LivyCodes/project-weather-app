@@ -61,12 +61,12 @@ function showTemperature(response) {
   newTimes.innerHTML = `Last updated on ${updateTime}`;
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = `${response.data.name}`;
-  let varTempHigh = document.querySelector("#var-high-temp");
-  varTempHigh.innerHTML = `High: ${highTemp}`;
-  let varTempLow = document.querySelector("#var-low-temp");
-  varTempLow.innerHTML = `Low: ${lowTemp}`;
   let temp = document.querySelector("#temperature");
   temp.innerHTML = `${celsiusTemperature}°`;
+  let varTempHigh = document.querySelector("#var-high-temp");
+  varTempHigh.innerHTML = `High: ${highTemp}°`;
+  let varTempLow = document.querySelector("#var-low-temp");
+  varTempLow.innerHTML = `Low: ${lowTemp}°`;
   let stat = document.querySelector("#status");
   stat.innerHTML = `${response.data.weather[0].description}`;
   let humid = document.querySelector("#humidity");
@@ -110,6 +110,12 @@ function showFarenheitTemp(event) {
   temperat.innerHTML = Math.round(farenheitTemperature);
 }
 
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let temperat = document.querySelector("#temperature");
+  temperat.innerHTML = Math.round(celsiusTemperature);
+}
+
 let celsiusTemperature = null;
 
 let button = document.querySelector("#current-button");
@@ -117,3 +123,6 @@ button.addEventListener("submit", currentCity);
 
 let farenheitTemp = document.querySelector("#farenheit");
 farenheitTemp.addEventListener("click", showFarenheitTemp());
+
+let celsiusTemp = document.querySelector("#celsius");
+celsiusTemp.addEventListener("click", showCelsiusTemp());
