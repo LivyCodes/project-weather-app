@@ -1,5 +1,5 @@
-function showDate() {
-  let now = new Date();
+function showDate(timestamp) {
+  let now = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -29,16 +29,14 @@ function showDate() {
   let year = now.getFullYear();
   let hour = now.getHours();
   let minutes = now.getMinutes();
-  let ap = hour >= 12 ? "pm" : "am";
-  hour = hour % 12;
-  hour = hour ? hour : 12;
+  //let ap = hour >= 12 ? "pm" : "am";
+  //hour = hour % 12;
+  //hour = hour ? hour : 12;
   minutes = minutes.toString().padStart(2, "0");
 
-  let newTime = `${days[day]}, ${date} ${months[month]} ${year}, ${hour}:${minutes}${ap}`;
+  let newTime = `${days[day]}, ${date} ${months[month]} ${year}, ${hour}:${minutes}`;
   return newTime;
 }
-let newTimes = document.querySelector("#day-date");
-newTimes.innerHTML = showDate();
 
 function searchCity(event) {
   event.preventDefault();
@@ -51,20 +49,28 @@ citySearchForm.addEventListener("submit", searchCity);
 
 function showTemperature(response) {
   console.log(response);
-  let temperature = Math.round(response.data.main.temp);
-  console.log(temperature);
+  let celsiusTemperature = Math.round(response.data.main.temp);
   let windSpeed = Math.round(response.data.wind.speed);
   let humidity = response.data.main.humidity;
+  let icon = response.data.weather[0].icon;
+
+  let newTimes = document.querySelector("#day-date");
+  newTimes.innerHTML = showDate(response.data.dt * 1000);
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = `${response.data.name}`;
   let temp = document.querySelector("#temperature");
-  temp.innerHTML = `${temperature}°`;
+  temp.innerHTML = `${celsiusTemperature}°`;
   let stat = document.querySelector("#status");
   stat.innerHTML = `${response.data.weather[0].description}`;
   let humid = document.querySelector("#humidity");
   humid.innerHTML = `${humidity}%`;
   let windSPEED = document.querySelector("#wind-speed");
   windSPEED.innerHTML = `${windSpeed}km/h`;
+  let iconElement = document.querySelector("#icon-element");
+  iconElement.setAttribute(
+    "src",
+    ` http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
 }
 
 function enterCity() {
@@ -85,8 +91,22 @@ function showPosition(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemperature);
 }
+
 function currentCity() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+function showFarenheitTemp(event) {
+  event.preventDefault();
+  let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let temperat = document.querySelector("#temperature");
+  temperat.innerHTML = Math.round(farenheitTemperature);
+}
+
+let celsiusTemperature = null;
+
 let button = document.querySelector("#current-button");
 button.addEventListener("submit", currentCity);
+
+let farenheitTemp = document.querySelector("#farenheit");
+farenheitTemp.addEventListener("click", showFarenheitTemp());
