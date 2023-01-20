@@ -104,16 +104,16 @@ function currentCity() {
 }
 
 function showFarenheitTemp(event) {
-  //event.preventDefault();
+  event.preventDefault();
   let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  let temperat = document.querySelector("#temperature");
-  temperat.innerHTML = Math.round(farenheitTemperature);
+  let fahrenTemp = document.querySelector("#temperature");
+  fahrenTemp.innerHTML = Math.round(farenheitTemperature);
 }
 
 function showCelsiusTemp(event) {
   event.preventDefault();
-  let temperat = document.querySelector("#temperature");
-  temperat.innerHTML = Math.round(celsiusTemperature);
+  let celTemp = document.querySelector("#temperature");
+  celTemp.innerHTML = Math.round(celsiusTemperature);
 }
 
 let celsiusTemperature = null;
