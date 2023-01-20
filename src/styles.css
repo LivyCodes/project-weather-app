@@ -68,3 +68,10 @@ footer p {
   font-family: "Courier Prime", monospace;
   color: #000000;
 }
+.weather-temp .active {
+  color: #000000;
+  cursor: default;
+}
+.weather-temp .active:hover {
+  text-decoration: none;
+}
