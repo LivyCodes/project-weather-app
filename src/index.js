@@ -49,7 +49,7 @@ citySearchForm.addEventListener("submit", searchCity);
 
 function showTemperature(response) {
   console.log(response);
-  let celsiusTemperature = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let windSpeed = Math.round(response.data.wind.speed);
   let humidity = response.data.main.humidity;
   let icon = response.data.weather[0].icon;
@@ -107,13 +107,13 @@ function showFarenheitTemp(event) {
   event.preventDefault();
   let farenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   let fahrenTemp = document.querySelector("#temperature");
-  fahrenTemp.innerHTML = Math.round(farenheitTemperature);
+  fahrenTemp.innerHTML = `${Math.round(farenheitTemperature)}°`;
 }
 
 function showCelsiusTemp(event) {
   event.preventDefault();
   let celTemp = document.querySelector("#temperature");
-  celTemp.innerHTML = Math.round(celsiusTemperature);
+  celTemp.innerHTML = `${Math.round(celsiusTemperature)}°`;
 }
 
 let celsiusTemperature = null;
@@ -122,7 +122,7 @@ let button = document.querySelector("#current-button");
 button.addEventListener("submit", currentCity);
 
 let farenheitTemp = document.querySelector("#farenheit");
-farenheitTemp.addEventListener("click", showFarenheitTemp());
+farenheitTemp.addEventListener("click", showFarenheitTemp);
 
 let celsiusTemp = document.querySelector("#celsius");
-celsiusTemp.addEventListener("click", showCelsiusTemp());
+celsiusTemp.addEventListener("click", showCelsiusTemp);
