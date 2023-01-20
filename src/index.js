@@ -38,6 +38,26 @@ function showDate(timestamp) {
   return newTime;
 }
 
+function displayForecast() {
+  let weatherForecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2">
+              <div class="weather-forecast-date">${day}</div>
+              <img src="images/sun.png" alt="weather icon" width="100" />
+              <div class="weather-forecast-temp">
+                <span class="weather-forecast-temp-max">24°</span
+                ><span class="weather-forecast-temp-min">12°</span>
+              </div>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  weatherForecastElement.innerHTML = forecastHTML;
+}
+
 function searchCity(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#exampleInputCity");
@@ -126,3 +146,5 @@ farenheitTemp.addEventListener("click", showFarenheitTemp);
 
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", showCelsiusTemp);
+
+displayForecast();
