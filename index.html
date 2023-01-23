@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,7 +28,7 @@
         <div class="container">
           <form id="city-search-form">
             <div class="row">
-              <div class="col-4">
+              <div class="col-5">
                 <input
                   type="text"
                   class="form-control"
@@ -37,11 +38,17 @@
                   placeholder="Enter a city"
                 />
               </div>
-              <div class="col-2">
+              <div class="col-sm-2">
                 <button type="submit" class="btn btn-primary">Search</button>
               </div>
-              <div class="col-2" id="current-button">
-                <button type="submit" class="btn btn-primary">Current</button>
+              <div class="col-sm-2">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  id="current-button"
+                >
+                  Current
+                </button>
               </div>
             </div>
           </form>
@@ -99,27 +106,27 @@
               <p class="temp">
                 <span class="forecast-temp-max">24°</span>/<span
                   class="forecast-temp-min"
-                  >12°</span
+                  >12°C</span
                 >
               </p>
             </div>
             <div class="col">
-              <h6 class="forecast-date">Sat</h6>
+              <h6 class="forecast-date">Sun</h6>
               <img src="images/sun.png" alt="weather icon" width="100" />
               <p class="temp">
                 <span class="forecast-temp-max">24°</span>/<span
                   class="forecast-temp-min"
-                  >12°</span
+                  >12°C</span
                 >
               </p>
             </div>
             <div class="col">
-              <h6 class="forecast-date">Sat</h6>
+              <h6 class="forecast-date">Mon</h6>
               <img src="images/sun.png" alt="weather icon" width="100" />
               <p class="temp">
                 <span class="forecast-temp-max">24°</span>/<span
                   class="forecast-temp-min"
-                  >12°</span
+                  >12°C</span
                 >
               </p>
             </div>
@@ -132,6 +139,7 @@
         <a
           href="https://github.com/LivyCodes/project-weather-app"
           target="_blank"
+          id="footer"
           >Open-Source Code </a
         >by Olive Wakamwe
       </p>

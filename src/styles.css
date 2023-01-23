@@ -1,7 +1,7 @@
 body {
   max-width: 600px;
   margin: auto;
-  background-image: url(https://i.pinimg.com/originals/0b/6d/83/0b6d83022b5326ca71c715e7c1743dfb.jpg);
+  background-image: url(/images/background.jpg);
   background-size: cover;
 }
 .card {
@@ -11,7 +11,7 @@ body {
   margin-top: 50px;
   max-width: 630px;
   backdrop-filter: blur(8px);
-  border: 3px solid rgba(0, 0, 0, 0.145);
+  border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 10px;
   flex-direction: column;
   display: flex;
@@ -23,6 +23,9 @@ body {
     rgb(143, 170, 210) 0%,
     rgb(255, 177, 177) 90%
   );
+}
+.card-title {
+  text-decoration: underline;
 }
 img {
   width: 25%;
@@ -79,9 +82,13 @@ footer p {
 .weather-temp .active:hover {
   text-decoration: none;
 }
-.col-2 {
+.col-sm-2 {
   text-align: center;
+  width: 20%;
 }
 .weather-forecast {
   text-align: center;
+}
+#footer {
+  text-decoration: none;
 }

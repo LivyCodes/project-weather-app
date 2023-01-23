@@ -5,11 +5,12 @@ function showDate(timestamp) {
     "Monday",
     "Tuesday",
     "Wednesday",
+    "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
   let day = now.getDay();
+
   let date = now.getDate();
   let months = [
     "Jan",
@@ -66,7 +67,7 @@ function displayForecast(response) {
                   forecastDay.temp.max
                 )}°</span>/<span
                   class="forecast-temp-min"
-                  >${Math.round(forecastDay.temp.min)}°</span
+                  >${Math.round(forecastDay.temp.min)}°C</span
                 >
               </p>
             </div>
@@ -172,7 +173,7 @@ function showCelsiusTemp(event) {
 let celsiusTemperature = null;
 
 let button = document.querySelector("#current-button");
-button.addEventListener("submit", currentCity);
+button.addEventListener("click", currentCity);
 
 let farenheitTemp = document.querySelector("#farenheit");
 farenheitTemp.addEventListener("click", showFarenheitTemp);
