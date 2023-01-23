@@ -53,7 +53,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row forecast">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 3) {
+    if (index > 0 && index < 4) {
       forecastHTML =
         forecastHTML +
         `
@@ -108,7 +108,7 @@ function showTemperature(response) {
 
   let newTimes = document.querySelector("#day-date");
   updateTime = showDate(response.data.dt * 1000);
-  newTimes.innerHTML = `Last updated on ${updateTime}`;
+  newTimes.innerHTML = `Last updated: ${updateTime}`;
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = `${response.data.name}`;
   let temp = document.querySelector("#temperature");
@@ -134,15 +134,19 @@ function showTemperature(response) {
   getForecast(response.data.coord);
 }
 
-function enterCity() {
-  let inputCity = document.querySelector("#exampleInputCity");
-  let city = inputCity.value;
+function enterCity(city) {
   let apiKey = "8ca7dd4e61360b90fb66918853670e48";
   let units = "metric";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiURL).then(showTemperature);
 }
-citySearchForm.addEventListener("submit", enterCity);
+function searchSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#exampleInputCity").value;
+  enterCity(city);
+}
+citySearchForm = document.querySelector("#city-search-form");
+citySearchForm.addEventListener("submit", searchSubmit);
 
 function showPosition(position) {
   let latitude = position.coords.latitude;
@@ -180,3 +184,5 @@ farenheitTemp.addEventListener("click", showFarenheitTemp);
 
 let celsiusTemp = document.querySelector("#celsius");
 celsiusTemp.addEventListener("click", showCelsiusTemp);
+
+enterCity("Nairobi");
