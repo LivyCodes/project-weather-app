@@ -93,8 +93,9 @@ footer p {
   text-decoration: none;
 }
 @media (max-width: 576px) {
-  .btn {
-    font-size: 10px;
-    line-height: 2;
+  .row {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
   }
 }
