@@ -22,102 +22,104 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">WEATHER APP</h5>
-        <div class="container">
-          <form id="city-search-form">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">WEATHER APP</h5>
+          <div class="container">
+            <form id="city-search-form">
+              <div class="row">
+                <div class="col-5">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="exampleInputCity"
+                    autofocus="on"
+                    autocomplete="off"
+                    placeholder="Enter a city"
+                  />
+                </div>
+                <div class="col-sm-2">
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+                <div class="col-sm-2">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="current-button"
+                  >
+                    Current
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <h5 id="city-name"></h5>
+          <h5 id="day-date"></h5>
+          <h5 id="icon-1">
+            <img src="" alt="Weather icon" width="120" id="icon-element" />
+          </h5>
+          <h4 id="temperature-input" class="weather-temp">
+            <span id="temperature"></span
+            ><span
+              ><a href="#" id="celsius" class="active">C</a>|<a
+                href="#"
+                id="farenheit"
+                >F</a
+              ></span
+            >
+          </h4>
+          <h6 id="status">Clear with periodic clouds</h6>
+          <ul>
+            <li id="var-high-temp"></li>
+            <li id="var-low-temp"></li>
+          </ul>
+          <hr style="border: 2px dashed #433f42" />
+          <div class="container text-center">
             <div class="row">
-              <div class="col-5">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleInputCity"
-                  autofocus="on"
-                  autocomplete="off"
-                  placeholder="Enter a city"
-                />
+              <div class="col-3">
+                Feels like
+                <div class="row" id="precip"></div>
               </div>
-              <div class="col-sm-2">
-                <button type="submit" class="btn btn-primary">Search</button>
+              <div class="col-3">
+                Wind
+                <div class="row" id="wind-speed"></div>
               </div>
-              <div class="col-sm-2">
-                <button
-                  type="submit"
-                  class="btn btn-primary"
-                  id="current-button"
-                >
-                  Current
-                </button>
+              <div class="col-3">
+                Humidity
+                <div class="row" id="humidity"></div>
               </div>
-            </div>
-          </form>
-        </div>
-        <h5 id="city-name"></h5>
-        <h5 id="day-date"></h5>
-        <h5 id="icon-1">
-          <img src="" alt="Weather icon" width="120" id="icon-element" />
-        </h5>
-        <h4 id="temperature-input" class="weather-temp">
-          <span id="temperature"></span
-          ><span
-            ><a href="#" id="celsius" class="active">C</a>|<a
-              href="#"
-              id="farenheit"
-              >F</a
-            ></span
-          >
-        </h4>
-        <h6 id="status">Clear with periodic clouds</h6>
-        <ul>
-          <li id="var-high-temp"></li>
-          <li id="var-low-temp"></li>
-        </ul>
-        <hr style="border: 2px dashed #433f42" />
-        <div class="container text-center">
-          <div class="row">
-            <div class="col-3">
-              Feels like
-              <div class="row" id="precip"></div>
-            </div>
-            <div class="col-3">
-              Wind
-              <div class="row" id="wind-speed"></div>
-            </div>
-            <div class="col-3">
-              Humidity
-              <div class="row" id="humidity"></div>
             </div>
           </div>
-        </div>
-        <hr style="border: 2px solid #433f42" />
-        <h6>Next 3-day forecast</h6>
+          <hr style="border: 2px solid #433f42" />
+          <h6>Next 3-day forecast</h6>
 
-        <div class="weather-forecast" id="forecast">
-          <div class="row forecast">
-            <div class="col">
-              <h6 class="forecast-date"></h6>
-              <img src="" alt="weather icon" width="100" />
-              <p class="temp">
-                <span class="forecast-temp-max"></span>/<span
-                  class="forecast-temp-min"
-                ></span>
-              </p>
+          <div class="weather-forecast" id="forecast">
+            <div class="row forecast">
+              <div class="col">
+                <h6 class="forecast-date"></h6>
+                <img src="" alt="weather icon" width="100" />
+                <p class="temp">
+                  <span class="forecast-temp-max"></span>/<span
+                    class="forecast-temp-min"
+                  ></span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <footer>
+        <p>
+          <a
+            href="https://github.com/LivyCodes/project-weather-app"
+            target="_blank"
+            id="footer"
+            >Open-Source Code </a
+          >by Olive Wakamwe
+        </p>
+      </footer>
+      <script src="src/index.js"></script>
     </div>
-    <footer>
-      <p>
-        <a
-          href="https://github.com/LivyCodes/project-weather-app"
-          target="_blank"
-          id="footer"
-          >Open-Source Code </a
-        >by Olive Wakamwe
-      </p>
-    </footer>
-    <script src="src/index.js"></script>
   </body>
 </html>

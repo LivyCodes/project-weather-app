@@ -92,3 +92,9 @@ footer p {
 #footer {
   text-decoration: none;
 }
+@media (max-width: 576px) {
+  .btn {
+    font-size: 10px;
+    line-height: 2;
+  }
+}
