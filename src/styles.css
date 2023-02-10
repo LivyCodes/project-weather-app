@@ -61,10 +61,11 @@ hr {
   justify-content: center;
   margin: auto;
   width: 100%;
+  box-sizing: border-box;
 }
 .btn {
-  background-color: #343a51;
-  border-color: #343a51;
+  background-color: #343a51b8;
+  border: none;
 }
 #status {
   text-transform: capitalize;
@@ -93,7 +94,7 @@ footer p {
   text-decoration: none;
 }
 @media (max-width: 576px) {
-  .row {
+  body {
     text-align: center;
     align-items: center;
     justify-content: center;
